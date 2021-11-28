@@ -1,0 +1,27 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "all_files",
+    srcs = glob(
+        [
+            "CMakeLists.txt",
+            "3rdparty/**/*",
+            "apps/**/*",
+            "bazel/**/*",
+            "cmake/**/*",
+            "data/**/*",
+            "doc/**/*",
+            "include/**/*",
+            "modules/**/*",
+            "platforms/**/*",
+            "samples/**/*",
+            "*",
+        ],
+        exclude = [
+            "bazel-*",
+        ],
+    ),
+    visibility = ["//visibility:public"],
+)
